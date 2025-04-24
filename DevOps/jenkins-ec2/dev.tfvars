@@ -1,9 +1,9 @@
 ami_id                 = "ami-0b86aaed8ef90e45f"
 instance_type          = "t2.micro"
-security_group_ids     = ["sg-0caf3d31b295957f0"]
-key_name               = "newkeypair"
-subnet_id              = "subnet-0727bd3161b5df4d1"
-instance_profile_name  = "Demo-rule"
+security_group_ids     = ["sg-01047e76889d77eac"]
+key_name               = "proj3-key"
+subnet_id              = "subnet-0e777117a6b83fc20"
+instance_profile_name  = "proj3-role"
 user_data              = <<-EOF
   #!/bin/bash
   sudo yum update -y
