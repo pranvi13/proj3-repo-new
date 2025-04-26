@@ -24,6 +24,16 @@ module "s3" {
     Environment = "dev"
   }
 }
+module "dynamodb" {
+  source = "../../modules/dynamodb/v0"
+
+  table_name = "fqts-tfstate-lock"
+  tags = {
+    Name        = "Terraform Lock Table"
+    Environment = "dev"
+  }
+}
+
 
 
 

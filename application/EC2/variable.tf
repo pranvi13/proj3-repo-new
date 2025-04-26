@@ -44,5 +44,11 @@ variable "instance_profile_name" {
   description = "Instance profile name (IAM role)"
   type        = string
 }
+variable "user_data" {
+  description = "User data to run on EC2 instance"
+  type        = string
+  default     = ""
+}
+
 
 

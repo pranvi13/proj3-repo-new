@@ -7,11 +7,16 @@ security_group_ids      = ["sg-01047e76889d77eac"]
 vpc_id = "vpc-0dd608a8eb96b5417"
 enable_termination_protection = true
 
-
 user_data = <<-EOF
     #!/bin/bash
+    yum update -y
+    yum install -y httpd
+    systemctl start httpd
+    systemctl enable httpd
+    echo "Hello from Terraform and Apache!" > /var/www/html/index.html
     echo "Hello from Terraform!" > /home/ec2-user/hello.txt
 EOF
+
 
 tags = {
   Name        = "simple-ec2"
