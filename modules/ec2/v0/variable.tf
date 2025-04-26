@@ -44,3 +44,25 @@ variable "user_data" {
   type    = string
   default = null
 }
+variable "name" {
+  description = "name of the instance."
+  type        = string
+  default = "application-ec2"
+}
+variable "project_name" {
+  description = "name of the project"
+  type        = string
+  default     = "proj3"
+}
+variable "env" {
+  description = "env details"
+  type        = string
+  default     = "dev"
+}
+
+variable "company_name" {
+  description = "company_name "
+  type        = string
+  default     = "FQTS"
+}
+

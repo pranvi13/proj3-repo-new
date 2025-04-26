@@ -7,7 +7,13 @@ resource "aws_instance" "EC2" {
   disable_api_termination = var.enable_termination_protection
   iam_instance_profile = var.instance_profile_name
   user_data = var.user_data 
-  tags = var.tags
+  
+  tags = {
+        Name = "${var.company_name}-${var.name}"
+        company_name = var.company_name
+        project_name = var.project_name
+        env = var.env
+    }
   
 }
 

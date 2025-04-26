@@ -1,3 +1,4 @@
+
 module "ec2_module" {
   source = "../../modules/ec2/v0"  # Path to your module
   ami_id                    = var.ami_id
@@ -8,19 +9,24 @@ module "ec2_module" {
   instance_profile_name  = var.instance_profile_name
   security_group_ids     = var.security_group_ids
 
-  
-  
-
-
-
-  
-
-  tags = {
-    Name        = "simple-ec2"
+ tags = {
+    
     Environment = "dev"
     Role        = "Infrastructure"
   }
 }
+
+module "s3" {
+  source      = "../../modules/s3/v0"
+  bucket_name = "fqts-bucket-tfstate"
+  tags = {
+    Name        = "tfstate-bucket"
+    Environment = "dev"
+  }
+}
+
+
+
 
 
 
