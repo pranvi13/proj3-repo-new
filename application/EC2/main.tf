@@ -16,25 +16,6 @@ module "ec2_module" {
   }
 }
 
-module "s3" {
-  source      = "../../modules/s3/v0"
-  bucket_name = "fqts-bucket-tfstate"
-  tags = {
-    Name        = "tfstate-bucket"
-    Environment = "dev"
-  }
-}
-module "dynamodb" {
-  source = "../../modules/dynamodb/v0"
-
-  table_name = "fqts-tfstate-lock"
-  tags = {
-    Name        = "Terraform Lock Table"
-    Environment = "dev"
-  }
-}
-
-
 
 
 
